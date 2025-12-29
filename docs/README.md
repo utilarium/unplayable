@@ -227,6 +227,6 @@ kill -9 <PID>
 
 ### Getting Help
 
-- **Issues**: [GitHub Issues](https://github.com/SemicolonAmbulance/unplayable/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/SemicolonAmbulance/unplayable/discussions)
+- **Issues**: [GitHub Issues](https://github.com/tobrien/unplayable/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/tobrien/unplayable/discussions)
 - **Documentation**: This site itself! 

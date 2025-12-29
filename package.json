@@ -8,7 +8,7 @@
     "types": "./dist/unplayable.d.ts",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/SemicolonAmbulance/unplayable.git"
+        "url": "git+https://github.com/tobrien/unplayable.git"
     },
     "exports": {
         ".": {
@@ -29,8 +29,9 @@
         "dev": "vite build --watch",
         "watch": "vite build --watch",
         "test": "vitest run --coverage",
-        "lint": "eslint . --ext .ts",
-        "lint:fix": "eslint . --ext .ts --fix",
+        "precommit": "npm run lint && npm run test",
+        "lint": "eslint .",
+        "lint:fix": "eslint . --fix",
         "clean": "rm -rf dist",
         "prepublishOnly": "npm run clean && npm run build",
         "docs:dev": "cd docs && cp ../README.md public/ && npm install && npm run dev",
@@ -46,10 +47,10 @@
         "ffmpeg",
         "cross-platform"
     ],
-    "author": "Semicolon Ambulance <SemicolonAmbulance@proton.me>",
+    "author": "Tim O'Brien <tobrien@discursive.com>",
     "license": "Apache-2.0",
     "dependencies": {
-        "glob": "^11.0.3",
+        "glob": "^13.0.0",
         "winston": "^3.17.0",
         "zod": "^4.0.2"
     },
@@ -58,10 +59,10 @@
         "@eslint/js": "^9.30.1",
         "@rollup/plugin-replace": "^6.0.2",
         "@swc/core": "^1.12.11",
-        "@types/node": "^24.0.12",
+        "@types/node": "^25.0.3",
         "@typescript-eslint/eslint-plugin": "^8.36.0",
         "@typescript-eslint/parser": "^8.36.0",
-        "@vitest/coverage-v8": "^3.2.4",
+        "@vitest/coverage-v8": "^4.0.16",
         "eslint": "^9.30.1",
         "eslint-import-resolver-typescript": "^4.4.4",
         "eslint-plugin-import": "^2.32.0",
@@ -71,7 +72,7 @@
         "vite-plugin-dts": "^4.5.4",
         "vite-plugin-node": "^7.0.0",
         "vite-plugin-node-polyfills": "^0.24.0",
-        "vitest": "^3.2.4"
+        "vitest": "^4.0.16"
     },
     "overrides": {
         "wrap-ansi": "7.0.0"

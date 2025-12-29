@@ -368,7 +368,7 @@ try {
 ### Building from Source
 
 ```bash
-git clone https://github.com/SemicolonAmbulance/unplayable.git
+git clone https://github.com/tobrien/unplayable.git
 cd unplayable
 npm install
 npm run build
@@ -405,11 +405,11 @@ This project is licensed under the Apache-2.0 License - see the [LICENSE](LICENS
 
 ## Acknowledgments
 
-- Built with the same patterns as [CardiganTime](https://github.com/SemicolonAmbulance/cardigantime)
+- Built with the same patterns as [CardiganTime](https://github.com/tobrien/cardigantime)
 - Uses [OpenAI Whisper](https://openai.com/research/whisper) for speech-to-text
 - Powered by [FFmpeg](https://ffmpeg.org/) for audio processing
 
-## Related SemicolonAmbulance Libraries
+## Related Libraries
 
-- **[CardiganTime](https://github.com/SemicolonAmbulance/cardigantime)** - Configuration management library
-- **[DreadCabinet](https://github.com/SemicolonAmbulance/dreadcabinet)** - File organization tool
+- **[CardiganTime](https://github.com/tobrien/cardigantime)** - Configuration management library
+- **[DreadCabinet](https://github.com/tobrien/dreadcabinet)** - File organization tool

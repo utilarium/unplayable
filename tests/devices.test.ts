@@ -1,6 +1,7 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import * as fs from 'fs/promises';
 import * as path from 'path';
+
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 import {
     detectBestAudioDevice,
@@ -1195,7 +1196,7 @@ AVFoundation audio devices:
 
             // Mock setRawMode to throw error on cleanup
             let cleanupCall = false;
-            mockStdin.setRawMode.mockImplementation((mode: boolean) => {
+            mockStdin.setRawMode.mockImplementation((_mode: boolean) => {
                 if (cleanupCall) {
                     throw new Error('Cleanup failed');
                 }

@@ -12,9 +12,10 @@ export default [
             '**/coverage',
             '**/docs/dist',
             '**/docs/node_modules',
-            // Ignore all files outside of src directory
+            // Ignore all files outside of src and tests directory
             '*',
-            '!src/**'
+            '!src/**',
+            '!tests/**'
         ],
     },
     js.configs.recommended,

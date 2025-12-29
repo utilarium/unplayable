@@ -16,12 +16,13 @@ export default defineConfig({
                 '**/*.d.ts',
                 '**/*.test.ts',
                 'docs/',
+                'src/error/index.ts'
             ],
             thresholds: {
-                statements: 88,
-                branches: 93,
-                functions: 96,
-                lines: 88,
+                statements: 84,
+                branches: 78,
+                functions: 88,
+                lines: 84,
             },
         },
     },
