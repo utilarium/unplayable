@@ -1,5 +1,6 @@
+import * as fs from 'fs/promises';
+
 import { beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
-import type { Mock } from 'vitest';
 
 // Mock the fs module - declarations moved after mocks
 
@@ -15,7 +16,6 @@ vi.mock('fs/promises', () => ({
 }));
 
 // Import the mocked functions
-import * as fs from 'fs/promises';
 const mockStat = vi.mocked(fs.stat);
 const mockAccess = vi.mocked(fs.access);
 const mockMkdir = vi.mocked(fs.mkdir);
@@ -417,7 +417,7 @@ describe('Storage Utility', () => {
         it('should handle default pattern', async () => {
             mockGlob.mockResolvedValueOnce(['file1.txt']);
 
-            const result = await storage.listFiles('/test/dir');
+            const _result = await storage.listFiles('/test/dir');
 
             expect(mockGlob).toHaveBeenCalledWith('*', {
                 cwd: '/test/dir',
@@ -538,9 +538,9 @@ describe('Storage Utility', () => {
         it('should return 0 if directory does not exist', async () => {
             mockAccess.mockRejectedValueOnce(new Error('Does not exist'));
 
-            const result = await storage.cleanupDirectory('/test/nonexistent');
+            const _result = await storage.cleanupDirectory('/test/nonexistent');
 
-            expect(result).toBe(0);
+            expect(_result).toBe(0);
         });
 
         it('should handle cleanup errors', async () => {

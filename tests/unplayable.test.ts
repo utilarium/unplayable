@@ -162,10 +162,35 @@ vi.mock('../src/configuration', () => ({
     ConfigurationManager: vi.fn()
 }));
 
-describe('Unplayable Library', () => {
-    beforeEach(() => {
-        vi.clearAllMocks();
-    });
+    describe('Unplayable Library', () => {
+        beforeEach(async () => {
+            vi.clearAllMocks();
+            // Reset loadConfiguration mock to default success state
+            const configMock = await import('../src/configuration');
+            vi.mocked(configMock.loadConfiguration).mockResolvedValue({
+                get: vi.fn((key: string) => {
+                    const config: any = {
+                        outputDirectory: '/tmp/output',
+                        preferencesDirectory: '/tmp/preferences',
+                        logging: { level: 'info' }
+                    };
+                    return config[key];
+                }),
+                getConfig: vi.fn(() => ({
+                    outputDirectory: '/tmp/output',
+                    preferencesDirectory: '/tmp/preferences',
+                    logging: { level: 'info' }
+                })),
+                updateConfig: vi.fn(),
+                saveToFile: vi.fn().mockResolvedValue(undefined),
+                saveToDefaultLocation: vi.fn().mockResolvedValue(undefined),
+                exportConfig: vi.fn(() => JSON.stringify({
+                    outputDirectory: '/tmp/output',
+                    preferencesDirectory: '/tmp/preferences',
+                    logging: { level: 'info' }
+                }))
+            } as any);
+        });
 
     afterEach(() => {
         vi.restoreAllMocks();

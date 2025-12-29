@@ -1,6 +1,6 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import * as path from 'path';
 import * as os from 'os';
+
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
 import {
     AudioProcessor,
@@ -8,8 +8,6 @@ import {
 } from '../src/processor';
 import {
     AudioProcessingOptions,
-    AudioProcessingResult,
-    AudioDeviceConfig,
     Logger
 } from '../src/types';
 import {
