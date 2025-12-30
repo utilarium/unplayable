@@ -191,7 +191,7 @@ export class Unplayable {
 /**
  * Create a default Winston logger
  */
-const createDefaultLogger = (level: string = 'info', silent: boolean = false): Logger => {
+export const createDefaultLogger = (level: string = 'info', silent: boolean = false): Logger => {
     return winston.createLogger({
         level,
         silent,

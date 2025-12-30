@@ -6,6 +6,9 @@
   "main": "./dist/unplayable.cjs",
   "module": "./dist/unplayable.js",
   "types": "./dist/unplayable.d.ts",
+  "bin": {
+    "unplayable": "./dist/cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tobrien/unplayable.git"
@@ -50,6 +53,8 @@
   "author": "Tim O'Brien <tobrien@discursive.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "@theunwalked/cardigantime": "file:../cardigantime",
+    "commander": "^14.0.2",
     "glob": "^13.0.0",
     "winston": "^3.17.0",
     "zod": "^4.0.2"
