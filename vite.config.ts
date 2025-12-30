@@ -15,10 +15,13 @@ export default defineConfig({
     ],
     build: {
         lib: {
-            entry: 'src/unplayable.ts',
+            entry: {
+                unplayable: 'src/unplayable.ts',
+                cli: 'src/cli.ts'
+            },
             name: 'Unplayable',
             formats: ['es', 'cjs'],
-            fileName: (format) => `unplayable.${format === 'es' ? 'js' : 'cjs'}`,
+            fileName: (format, entryName) => `${entryName}.${format === 'es' ? 'js' : 'cjs'}`,
         },
         rollupOptions: {
             external: [
@@ -31,11 +34,14 @@ export default defineConfig({
                 'stream',
                 'events',
                 'util',
+                'url',
                 'process',
                 'readline',
                 'winston',
                 'glob',
                 'zod',
+                'commander',
+                '@theunwalked/cardigantime'
             ],
             output: {
                 globals: {
@@ -53,6 +59,8 @@ export default defineConfig({
                     'winston': 'winston',
                     'glob': 'glob',
                     'zod': 'zod',
+                    'commander': 'commander',
+                    '@theunwalked/cardigantime': '@theunwalked/cardigantime'
                 },
             },
         },
