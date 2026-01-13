@@ -1,6 +1,6 @@
 {
   "name": "@theunwalked/unplayable",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "A cross-platform audio recording and processing library",
   "type": "module",
   "main": "./dist/unplayable.cjs",
