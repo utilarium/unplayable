@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as path from 'path';
-import * as os from 'os';
-import { spawn } from 'child_process';
+import * as path from 'node:path';
+import * as os from 'node:os';
+import { spawn } from 'node:child_process';
 
 import {
     AudioProcessingOptions,
