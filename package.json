@@ -1,6 +1,6 @@
 {
   "name": "@theunwalked/unplayable",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "A cross-platform audio recording and processing library",
   "type": "module",
   "main": "./dist/unplayable.cjs",
@@ -52,8 +52,11 @@
   ],
   "author": "Tim O'Brien <tobrien@discursive.com>",
   "license": "Apache-2.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "dependencies": {
-    "@theunwalked/cardigantime": "^0.0.20",
+    "@theunwalked/cardigantime": "^0.0.21",
     "commander": "^14.0.2",
     "glob": "^13.0.0",
     "winston": "^3.17.0",
